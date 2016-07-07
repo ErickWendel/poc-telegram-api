@@ -26,7 +26,13 @@ bot.on('message', function (msg) {
                     { 
                         parse_mode: 'HTML',
                         reply_to_message_id: msg.message_id,
-                        reply_markup: {keyboard: [1,2,3]}
+                        reply_markup: JSON.stringify({
+                            inline_keyboard: [
+                                    [{ text: 'Pizza', callback_data: '0' }, { text: 'Feijao', callback_data: '1' }],
+                                    [{ text: 'Hamburger', callback_data: '2' }, { text: 'Arroz', callback_data: '3' }],
+                                    [{ text: 'Macarrão', callback_data: '4' }]
+                                ]
+                            })
                         
                         });
     
